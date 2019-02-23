@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+ 
+
+  <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
+
+	<meta charset="utf-8">
+  <title></title>
+  
+  <style type="text/css">
+  html{
+      /* background: url("Asset/Lipid-phases.png") no-repeat center center fixed; */
+      background-size: cover;
+      background-position-x: 70%;
+      /* background-color:rgb(3, 0, 24); */
+      background-color:rgb(0, 0, 0); 
+  }
+
+		canvas {
+			border: 1px;
+		}
+
+		body {
+      margin: 0 auto;
+      max-width: 960px;
+      background-color:rgb(0, 0, 0);
+
+		}
+
+		#DiffLimitedImg {
+   
+
+   
+    margin: auto;
+    transform: scale(.88);
+  
+
+
+
+}
+
+#refresh_box{
+
+  position: absolute;
+  right:80px;
+  top: 10px;
+
+}
+
+.poster-text{
+ 
+  color:wheat;
+}
+#SMblinking{
+
+   max-width: 100%;
+   margin: 0 auto;
+   transform: scale(1.5);
+
+}
+#intro_video{
+position:fixed;
+left:50%;
+top:50%;
+max-width: 100%;
+max-height: 100%;
+margin: 0 auto;
+transform: translate(-50%,-50%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+canvas {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				background: transparent;}
+  #SR_anim{
+  display: inline-block;
+}
+.img-body{
+  text-align: center;
+
+}
+.gallery-container{
+
+  color: wheat;
+  font-family: 'Source Code Pro', 'Courier New', Courier, monospace, sans-serif;
+  padding: 10px;
+  position: absolute;
+  top: 10%;
+}
+.styled_hr{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  
+}
+
+  
+
+.posterlist{
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.posterlist a{
+
+  display: inline-block;
+}
+.poster-body{
+
+  display: inline-block;
+
+}
+.poster-body{
+  text-align: center;
+}
+.score {
+				position: absolute;
+				top: 5px;
+				left: 80px;
+                font-size: 16px;
+                font-weight: 900;
+				color: rgb(240, 233, 209);
+				font-family: 'Source Code Pro', 'Courier New', Courier, monospace, sans-serif;
+				cursor: default;
+}
+#score_box{
+
+        visibility: hidden;
+        opacity: 0;
+        transition: all 2s;
+}
+
+#game-over{
+
+    display: none;
+}
+
+.game-over {
+				position: absolute;
+				top: 40px;
+				left: 80px;
+				color: rgb(240, 233, 209);;
+				font-family: 'Source Code Pro', 'Courier New', Courier, monospace, sans-serif;
+				font-size: 16px;
+				cursor: default;
+
+			}
+			
+			.game-over span:hover {
+				color: rgb(193, 39, 45);
+			}
+
+a.CoolBotton{
+display: inline;
+padding: .3em .3em;
+border:.1em solid rgb(241, 231, 231);
+margin: 0 .1em 0 .1em;
+text-decoration: none;
+font-family: 'Source Code Pro', 'Courier New', Courier, monospace, sans-serif;
+font-weight: 900;
+color: rgb(236, 230, 169);
+text-align: center;
+transition: all .2s;
+}
+
+p{
+  font-family:'Source Code Pro', 'Courier New', Courier, monospace, sans-serif;
+
+}
+a.CoolBottonWhite{
+display: inline;
+padding: .1em .1em;
+border:.1em solid rgb(230, 227, 227);
+margin: 0 .1em 0 .1em;
+text-decoration: none;
+font-family:'Source Code Pro', 'Courier New', Courier, monospace, sans-serif;
+font-weight: 900;
+color: rgb(240, 232, 232);
+text-align: center;
+transition: all .2s;
+}
+
+#SMdescription {
+    display: none;
+    text-align: center;
+    /* background: rgba(0, 0, 0, 0.6); */
+    color: wheat;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+#SMdescription2 {
+  display: inline-block;
+    position: fixed;
+    bottom: 0;
+    /* background: rgba(0, 0, 0, 0.6); */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.overlay-desc {
+  background: rgba(0,0,0,0);
+  position: relative;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header{
+  display: flex;
+  color: #fff;
+  padding: 20px 0;
+
+}
+
+.menue{
+  /* display: flex;
+  justify-content: center; */
+  margin: 0 auto;
+  font-family: 'Source Code Pro', monospace;
+}
+.container{
+width: 100%;
+height: 300px;
+display:flex;
+justify-content:space-around;
+flex-direction: row;
+align-items: flex-start;
+}
+
+#startBotton{
+display: inline;
+padding: .1em .1em;
+margin: 0 .1em 0 .1em;
+text-decoration: none;
+font-family:'Source Code Pro', 'Courier New', Courier, monospace, sans-serif;
+color: rgb(240, 232, 232);
+text-align: center;
+transition: all .2s;
+font-size: 2em;
+font-weight: 900;
+}
+
+#mainContainer{
+  display: none;
+}
+
+#bottom1{
+height: auto;
+width: auto;
+position: relative;
+left: -50%;
+    top: 20px;
+}
+#bottom2{
+
+height: auto;
+width: auto;
+position: relative;
+left: -50%;
+    top: 20px;
+    padding: 5px;
+}
+#MT_DL{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-85%,-50%);
+    opacity:0; 
+    transition: all;
+    visibility: hidden;
+
+}
+
+#backg_video{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+
+#microscope{
+  display: flex;
+  padding: 20px;
+  width:50%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#MiscroscopeAnim1{
+  display:flex;
+}
+#MiscroscopeAnim2{
+  display: none;
+  /* display:flex; */
+}
+#MicroscopeDesc1{
+
+  display: flex;
+  float: left;
+  transform:translateY(50%);
+}
+
+#MicroscopeDesc2{
+
+/* display: flex; */
+display: none;
+float: left;
+transform:translateY(50%);
+}
+#bottom1{
+
+  display:inline;
+  padding:5px;
+}
+
+
+#microscopeSR{
+  /* display:none; */
+  display: flex;
+  padding: 20px;
+  width:50%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#myBtn{
+  position:relative;
+  top:10px;
+}
+#myBtn2{
+  position:relative;
+  top:10px;
+  font-size: 1.2em;
+}
+
+#powerLogo{
+margin: 0 auto;
+display: flex;
+justify-content: center;
+
+}
+
+#demoDescription{
+
+  padding:10px 10px;
+
+
+}
+
+#enter_img{
+display: block;
+position: relative;
+text-align: center;
+margin-left: 0;
+margin-right:auto;
+}
+#LipidSRimg{
+  max-width: 100%;
+
+}
+#enter_text{
+position: fixed;
+left:50%;
+bottom: 10%;
+transform: translate( -50%);
+
+}
+
+#Emitters3{
+display: block;
+position: relative;
+margin: 0 auto;
+top:-50px;
+}
+/* headlines with lines */
+.decorated{
+     text-align: center;
+ }
+.decorated > span{
+    position: relative;
+    display: inline-block;
+}
+.decorated > span:before, .decorated > span:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 2px solid wheat;
+    width: 50%; /* half of limiter */
+    margin: 0 20px;
+}
+.decorated > span:before{
+    right: 100%;
+}
+.decorated > span:after{
+    left: 100%;
+}
+
+
+
+#BtnMovieBlink{
+display: inline-block;
+margin: 0 auto;
+margin-top: 0px;
+text-align: center;
+margin-top: 20px;
+border-style: solid;
+padding: 2px;
+}
+
+
+/* responsive design */
+/* If the screen size is 600px or less, set the font-size of ...*/
+@media only screen and (max-width: 600px) {
+  #startBotton {
+    font-size: 1.2em;
+  }
+}
+
+
+  </style> 
+</head>
+
+<body onload="init()">  
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>  
+  <script src="jquery.fancybox.min.js"></script>
+    <canvas></canvas>
+    <script src="canvas.js"></script> 
+
+<div class="header">
+<div id="mainMenue" class="menue">
+
+ <div id="enter_img">
+   
+         <!-- add background video -->
+    <div >
+      <video autoplay muted loop id="intro_video">
+        <source  src="data\intro_movie.mp4" type="video/mp4">
+      </video>
+      </div>
+  
+    <!--  <img id="LipidSRimg" src="Asset\Enter.png"> -->
+    <div id="enter_text">
+  <botton id="startBotton">
+        ENTER
+    </botton>
+</div>
+
+</div> 
+</div>
+
+</div>
+
+
+
+
+<div id="mainContainer" class="container">
+
+ <div id="microscope">
+   <div id="MicroscopeDesc1">
+     
+     <p style="color:wheat; float: left;">
+       Turn on the laser 
+       <div id="bottom1">
+          <img id="powerLogo" src=".\Asset\powerLogo.png"  onmouseover="DispFunc()" height="30" width="30">    
+      </div>
+     </p>
+   </div>
+   
+   <div id="MiscroscopeAnim1">
+    <img id="MicroscopeImg" src="Asset\MicroscopeOff.png" height="100" width="100">
+    <!-- <img id="Emitters1" src="Asset\dark.gif" height="100" width="400">   -->
+    <br>
+   </div>
+   <br>
+   <div id='SMdescription' class="content"> 
+      <h2>What is this?!</h2> 
+      <!-- Use a button to pause/play the video with JavaScript -->
+      <!-- <a id="myBtn" class="CoolBottonWhite" onmouseover="NonDisp()">Go back!</a> -->
+    </div>
+</div>
+  
+
+
+  <div id="MT_DL">
+      <img  id="DiffLimitedImg" src=".\Asset\DNA_croped_DL.png">
+      
+      </div>
+
+      <!-- Optional: some overlay text to describe the video -->
+
+
+  <br>
+
+    <div id="microscopeSR">
+        <div id="MicroscopeDesc2">
+            <p style="color:wheat; float: left;">
+Make the sample blink
+          </p>
+          <div id="bottom2">
+              <img id="powerLogo" src=".\Asset\powerLogo.png" onmouseover="DispFunc2()" height="30" width="30">
+          </div>
+          </div>
+
+          <div id="MiscroscopeAnim2">
+
+      <img id="MicroscopeImg2" src=".\Asset\MicroscopeOff.png" height="100" width="100">
+      <!-- <img id="Emitters2" src="Asset\dark.gif" height="100" width="400"> -->
+
+          </div>
+          <br>
+        </div>
+    
+     
+    
+  </div>
+  
+
+
+
+  <div id='vid-gallery' class="gallery-container" style=" visibility: hidden;opacity:0;">
+    <h2> Super-resolution imaging gallery</h2>
+      <hr class="styled_hr">
+      <div class="posterlist">
+ 
+          <div class="poster-body">
+              <a data-fancybox="vid-gallery" href="http://lewlab.wustl.edu/images/SR-MT-BSC1_Moerner.mp4" >
+                    <img  class="poster-img-gallery" id="poster-img1" src="./Asset/MT_DL_croped_small.png"/>
+              </a>
+              <!-- <p class="poster-text" >Direct link to YouTube</p> -->
+            </div>
+            <div class="poster-body">
+                <a data-fancybox href="http://lewlab.wustl.edu/images/Conventional_vs_TAB_SR.mp4" >
+                      <img  class="poster-img-gallery" id="poster-img1" src="./Asset/Amyloid_EGCG_DL_croped.png" />
+                </a>
+                <!-- <p class="poster-text" >Direct link to YouTube</p> -->
+              </div>
+            
+      </div>
+        
+        </div>
+        
+  
+    <div class="score" id="score_box">SUPER-RESOLUTION SCORE: <span id="score"></span></div>
+    <div class="game-over" id="game-over"> 
+        <!-- <p><span onclick="init_game()">Try again</span></p> -->
+        <div id='SMdescription2' class="content">
+           
+            <!-- Use a button to pause/play the video with JavaScript -->
+            <a id="myBtn2" class="CoolBottonWhite" onmouseover="NonDisp2()"> 
+              CHECK OUT OUR SUPER-RESOLUTION gallery!
+             </a>
+          </div>
+      </div>
+
+      <div id="refresh_box" onclick="refresh()">
+          <a id="refreshBtn" class="CoolBottonWhite" onclick="refresh()"> 
+              START OVER
+             </a>
+      </div>
+
+<script>
+$('[data-fancybox="vid-gallery"]').fancybox({
+	loop : true
+});
+</script>
+       
+        
+</body>
+
+</html>
