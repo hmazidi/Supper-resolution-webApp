@@ -1,1 +1,1 @@
-# superresolution_web_app
+# An interactive web application demonstrating basic concepts of super-resolution localization microscopy.
